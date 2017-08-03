@@ -1,0 +1,9 @@
+{
+    "AUTHOR" : "umbresp",
+    "SHORT" : "Searches BSU for a guide.",
+    "DESCRIPTION" : "Searches BSU for a guide. Extremely simple.",
+    "DISABLED" : false,
+    "NAME" : "Bsusearch",
+    "TAGS" : ["search", "brawlstars"],
+    "INSTALL_MSG" : "Thank you for installing this search cog. It's extremely simple."
+}
