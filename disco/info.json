@@ -1,0 +1,9 @@
+{
+    "AUTHOR" : "umbresp",
+    "SHORT" : "Changes the color of a role.",
+    "DESCRIPTION" : "Changes the color of a role every 60 or more seconds.",
+    "DISABLED" : false,
+    "NAME" : "Disco",
+    "TAGS" : ["disco", "rainbow", "role"],
+    "INSTALL_MSG" : "Thank you for installing this cog!"
+}
