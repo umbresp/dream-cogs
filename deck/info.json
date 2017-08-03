@@ -1,0 +1,9 @@
+{
+    "AUTHOR" : "umbresp",
+    "SHORT" : "Searches CRA for a deck.",
+    "DESCRIPTION" : "Searches CRA for a deck.",
+    "DISABLED" : false,
+    "NAME" : "Deck",
+    "TAGS" : ["deck", "cra", "clashroyale"],
+    "INSTALL_MSG" : "Thank you for installing this cog. If you need any help, I'm on Discord at @Victini#7460."
+}
