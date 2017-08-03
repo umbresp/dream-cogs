@@ -1,2 +1,2 @@
 # dream-cogs
-Nothing useful, go away. (at least not yet)
+These are my first cogs in development as I learn python!
