@@ -17,7 +17,7 @@ class disco:
 
     @checks.admin_or_permissions(manage_roles=True)
     @commands.command(pass_context = True, no_pm=True)
-    async def rainbow(self, ctx, interval:float, *, role):
+    async def disco(self, ctx, interval:float, *, role):
         """Changes a role's color every x seconds. Must be 60 or superior."""
         roleObj = discord.utils.find(lambda r: r.name == role, ctx.message.server.roles)
         if not roleObj:
@@ -32,10 +32,10 @@ class disco:
             await self.bot.edit_role(ctx.message.server, roleObj, colour=discord.Colour(value=colour))
             await asyncio.sleep(interval)
 
-	  @checks.admin_or_permissions(manage_roles=True)
+    @checks.admin_or_permissions(manage_roles=True)
     @commands.command(pass_context = True, no_pm=True)
-    async def stop(self, ctx, *, role):
-        """Stops the rainbow. A bit hacky"""
+    async def stopdisco(self, ctx, *, role):
+        """Stops the disco. A bit hacky"""
         while True:
             await self.bot.edit_role(ctx.message.server, roleObj, colour=discord.Colour(value=000000))
             await asyncio.sleep(1)
