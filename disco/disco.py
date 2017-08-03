@@ -11,6 +11,9 @@ class disco:
 
     def __init__(self, bot):
         self.bot = bot
+
+	
+    stopped = false
 	
     @checks.admin_or_permissions(manage_roles=True)
     @commands.command(pass_context = True, no_pm=True)
@@ -29,7 +32,7 @@ class disco:
 	
 	await self.bot.say("{} is now disco!".format(role))
 	
-        while True:
+        while not stopped:
             colour = ''.join([choice('0123456789ABCDEF') for x in range(6)])
             colour = int(colour, 16)
             await self.bot.edit_role(ctx.message.server, roleObj, colour=discord.Colour(value=colour))
@@ -38,11 +41,9 @@ class disco:
     @checks.admin_or_permissions(manage_roles=True)
     @commands.command(pass_context = True, no_pm=True)
     async def stopdisco(self, ctx, *, role):
-        """Stops the disco. A bit hacky"""
+        """Stops the disco. Not sure if it works"""
 	
-        while True:
-            await self.bot.edit_role(ctx.message.server, roleObj, colour=discord.Colour(value=000000))
-            await asyncio.sleep(1)
+        stopped = true
 	
 	
 def setup(bot):
