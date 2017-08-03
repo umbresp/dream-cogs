@@ -1,0 +1,9 @@
+{
+    "AUTHOR" : "umbresp",
+    "SHORT" : "For getting mad.",
+    "DESCRIPTION" : "Use these commands to express your anger.",
+    "DISABLED" : false,
+    "NAME" : "Violence",
+    "TAGS" : ["violence"],
+    "INSTALL_MSG" : "Thank you for installing this cog."
+}
