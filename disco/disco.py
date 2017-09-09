@@ -21,8 +21,8 @@ class disco:
 
     @checks.admin_or_permissions(manage_roles=True)
     @commands.command(pass_context = True, no_pm=True)
-    async def disco(self, ctx, seconds:float, *, role):
-        """Changes a role's color every x seconds. Must be 60 or superior."""
+    async def disco(self, ctx, *, role):
+        """Changes a role's color every 60 seconds."""
         roleObj = discord.utils.find(lambda r: r.name == role, ctx.message.server.roles)
 
         stopped = 0
@@ -31,7 +31,10 @@ class disco:
             no = discord.Embed(title="{} is not a valid role".format(role))
             await self.bot.say(embed=no)
             return
- 
+        
+        self.settings = list(settings)
+        
+        fileIO("data/disco/settings.json", "save", self.settings)
         if seconds < 60:
             await self.bot.say("The interval must be higher than 60.")
             return
@@ -53,16 +56,14 @@ class disco:
         
         
     async def change_role_color(self, message):
-        for roles in settings:
-            await self.bot.edit_role(message.server, roles, color=discord.Colour(value=random_color(message)))
-            
-        await asyncio.sleep(60)
+        for role in roles:
+            await self.bot.edit_role(message.server, role, color=discord.Colour(value=random_color(message)))   
+           
         
     def random_color(self, msg):
         color = "".join([choice('0123456789ABCDEF') for x in range(6)])
         return color
    
-        
         
 def check_folders():
     if not os.path.exists("data/disco"):
