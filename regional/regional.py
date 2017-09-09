@@ -9,7 +9,7 @@ class Regional(object):
         text = text.lower()
         x = 0
         while x <= len(text):
-            msg += ":regional_indicator_" + text[x]
+            msg += ":regional_indicator_" + text[x] + ": "
         
         if len(msg) > 2000:
             await self.bot.say("Your message is too long.")
